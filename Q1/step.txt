@@ -1,0 +1,22 @@
+Working step:
+curl ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz -o access_log.gz
+gunzip access_log.gz
+iconv -c -t UTF8 access_log -o access_log_utf8
+aws s3 cp access_log s3://abc882021/access_log
+aws s3 cp access_log_utf8 s3://abc882021/access_log_utf8
+
+debug:
+curl ftp://ita.ee.lbl.gov/traces/NASA_access_log_Aug95.gz > access_log.gz
+file -i access_log.gz
+iconv -f UTF8 -t UTF8 access_log -o test
+iconv -c -t UTF8 access_log -o test
+iconv -f UTF-8 access_log -o /dev/null; echo $?
+iconv -f UTF-8 test -o /dev/null; echo $?
+    
+aws s3api select-object-content \
+    --bucket abc882021 \
+    --key access_log_utf8 \
+    --expression "SELECT COUNT(*) FROM s3object s;" \
+    --expression-type 'SQL' \
+    --input-serialization '{"CSV": {}, "CompressionType": "NONE"}' \
+    --output-serialization '{"CSV": {}}' "q1.csv"
