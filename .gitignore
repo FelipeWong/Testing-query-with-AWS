@@ -1,3 +1,6 @@
+*.pyo
+*.pyc
+
 Q1/access_log
 Q1/access_log_utf8
 Q1/venv
