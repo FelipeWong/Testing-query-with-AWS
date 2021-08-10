@@ -1,1 +1,1 @@
-![Test](Q3 diagram.png)
+![Test](/diagram.png)
