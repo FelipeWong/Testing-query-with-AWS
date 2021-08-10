@@ -1,1 +1,1 @@
-![Test](/Test/Q3/diagram.png)
+![Test](https://github.com/FelipeWong/Test/blob/main/diagram.png?raw=true)
