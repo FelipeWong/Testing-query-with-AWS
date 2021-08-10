@@ -3,8 +3,12 @@
         <title>{{ title }}</title>
     </head>
     <body>
-        {% for candidate in candidates %}
-            <h1>{{ candidate }}</h1>
-        {% endfor %}
+        <form method="POST" action="/vote">
+            <ol>
+                {% for candidate in candidates %}
+                <li>{{ candidate }}<button id="a" type="submit" name="vote" value={{ loop.index }}>support</button></li>
+                {% endfor %}
+            </ol>
+        </form>
     </body>
 </html>
