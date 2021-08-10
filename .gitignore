@@ -2,3 +2,6 @@ Q1/access_log
 Q1/access_log_utf8
 Q1/venv
 Q1/venv/*
+
+Q3/voting_app/venv
+Q3/voting_app/venv/*
