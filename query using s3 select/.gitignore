@@ -1,0 +1,8 @@
+*.pyo
+*.pyc
+
+.venv
+venv/
+
+access_log
+access_log_utf8
