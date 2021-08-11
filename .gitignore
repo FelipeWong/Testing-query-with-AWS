@@ -1,0 +1,8 @@
+*.pyo
+*.pyc
+
+.venv
+venv/
+
+query using s3 select/access_log
+query using s3 select/access_log_utf8
